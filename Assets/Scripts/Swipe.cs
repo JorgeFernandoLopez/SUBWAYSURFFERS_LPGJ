@@ -45,6 +45,23 @@ public class Swipe : MonoBehaviour
     }
     private void DetectSwipeDirection(Vector2 swipeVector)
     {
-        
+        float angle = Vector2.SignedAngle(Vector2.right, swipeVector);
+
+        if (angle >= -45f && angle <= 45f)
+        {
+            onSwipeRight?.Invoke();
+        }
+        else if (angle > 45f && angle < 135f)
+        {
+            onSwipeUp?.Invoke();
+        }
+        else if (angle >= 135f || angle <= -135f)
+        {
+            onSwipeLeft?.Invoke();
+        }
+        else if (angle < -45f && angle > -135f)
+        {
+            onSwipeDown?.Invoke();
+        }
     }
 }
