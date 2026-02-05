@@ -22,12 +22,19 @@ public class Character : MonoBehaviour
 
     private bool isMoving = false;
     private bool isRolling = false;
+    private bool isActive = false;
   
     
     private void Start()
     {
+        isActive = true;
         characterAnimator.Play(characterData.runAnimationName, 0, 0f);
         characterRigidBody = GetComponent<Rigidbody>();
+    }
+    public void Lose()
+    {
+        StopAllCoroutines();
+        characterAnimator.Play(characterData.runAnimationName, 0, 0F);
     }
     public void Jump()
     {
@@ -47,20 +54,17 @@ public class Character : MonoBehaviour
         isRolling = true;
         StartCoroutine(ResetRoll());
     }
-    public void MoveLeft()
+      public void MoveLeft()
     {
-        if (transform.position.x <= -distanceToMove) return;
-        Move(Vector3.left);
+       Move(Vector3.left);
     }
     public void MoveRight()
-
     {
-        if (transform.position.x >= -distanceToMove) return;
         Move(Vector3.right);
     }
     private void Move(Vector3 direction)
     {
-        if (isMoving) return;
+        if (isMoving || isActive) return;
         characterAnimator.Play(characterData.moveAnimationName, 0, 0f);
 
         isMoving = true;
@@ -79,7 +83,7 @@ public class Character : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (isActive && collision.gameObject.CompareTag("Ground"))
         {
             if (!isRolling)
             {
