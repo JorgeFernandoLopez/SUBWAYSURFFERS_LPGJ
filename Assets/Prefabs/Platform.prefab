@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1853433714347179766}
   - component: {fileID: 8983962811587122310}
+  - component: {fileID: 3187422477479464694}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Ground
@@ -56,6 +57,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 18.1, y: 0.63, z: 12.47}
   m_Center: {x: -0.15, y: 0.61, z: -0}
+--- !u!54 &3187422477479464694
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477453751013684203}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &554916529403902066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71,6 +99,10 @@ PrefabInstance:
     - target: {fileID: 8463589540060682297, guid: 2e9cbcf956215164b9eb1e0f029703bd, type: 3}
       propertyPath: m_Name
       value: Road 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463589540060682297, guid: 2e9cbcf956215164b9eb1e0f029703bd, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 9097101323999314563, guid: 2e9cbcf956215164b9eb1e0f029703bd, type: 3}
       propertyPath: m_LocalScale.z
