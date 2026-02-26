@@ -6,9 +6,16 @@ using UnityEngine.Events;
 public class Character : MonoBehaviour 
 {
     private Rigidbody characterRigidBody;
-    [SerializeField] private float jumpForce = 5f;
+   
     [SerializeField] private CharacterData characterData;
     [SerializeField] private Animator characterAnimator;
+
+    private float jumpForce = 5F;
+    public float JumpForce
+    {
+        get {return jumpForce;}
+        set { jumpForce = value;}
+    }
     private float distanceToMove = 2f;
     [SerializeField] private float moveDuration = 0.2f;
     [SerializeField] private Transform CharacterStartPivot;
