@@ -554,7 +554,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Wiggle
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &404901785
@@ -1660,6 +1660,55 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1024232166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024232168}
+  - component: {fileID: 1024232167}
+  m_Layer: 0
+  m_Name: PowerUpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1024232167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024232166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1c5198eb165484da95a812a1892cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
+  minPlatformsNumber: 5
+  maxPlaformsNumber: 7
+  powerUpPools:
+  - {fileID: 1145501195}
+  powerUpOffset: 0.5
+--- !u!4 &1024232168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024232166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.14335, y: 0, z: -2.62595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1051629900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +2055,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1299596152
+--- !u!1 &1145501194
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2014,62 +2063,54 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1299596154}
-  - component: {fileID: 1299596153}
-  - component: {fileID: 1299596155}
+  - component: {fileID: 1145501196}
+  - component: {fileID: 1145501195}
   m_Layer: 0
-  m_Name: JumpPoqwerUp
+  m_Name: InstantiateJumpPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1299596153
+--- !u!114 &1145501195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299596152}
+  m_GameObject: {fileID: 1145501194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eece60bcfc327204c8da67d5a090a00f, type: 3}
+  m_Script: {fileID: 11500000, guid: 541094fa459425e4d94d9a047f39b8c9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JumpPowerUp
-  jumpForceMultiplier: 1.5
-  duration: 5
-  boots:
-  - {fileID: 678332759}
-  - {fileID: 812047064}
-  character: {fileID: 87885863}
---- !u!4 &1299596154
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 8701938855405497061, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+--- !u!4 &1145501196
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299596152}
+  m_GameObject: {fileID: 1145501194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16871, y: 2.6628, z: 0.42737}
+  m_LocalPosition: {x: 1.14335, y: 0, z: -2.62595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1299596155
+--- !u!114 &1299596153 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5159879903352804219, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+  m_PrefabInstance: {fileID: 7699812359931265777}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299596152}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ab8e48ab7c5ed4a9022c57fc003150, type: 3}
+  m_Script: {fileID: 11500000, guid: eece60bcfc327204c8da67d5a090a00f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Rotate
-  rotationSpeed: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::JumpPowerUp
 --- !u!1 &1344591403
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3141,21 @@ MonoBehaviour:
   - {fileID: 2078994178}
   initialPlatforms: 5
   speed: 5
+  onPlatformPassed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1024232167}
+        m_TargetAssemblyTypeName: PowerUpManager, Assembly-CSharp
+        m_MethodName: PlatformPassed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Platform, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1941662097
 Transform:
   m_ObjectHideFlags: 0
@@ -3160,6 +3216,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7699812359931265777
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16871
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.42737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054212571806138768, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159879903352804219, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 87885863}
+    - target: {fileID: 5159879903352804219, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: 'boots.Array.data[0]'
+      value: 
+      objectReference: {fileID: 678332759}
+    - target: {fileID: 5159879903352804219, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: 'boots.Array.data[1]'
+      value: 
+      objectReference: {fileID: 812047064}
+    - target: {fileID: 8701938855405497061, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
+      propertyPath: m_Name
+      value: JumpPoqwerUp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3a223cb9e434de4ab22ddce8779b256, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3187,4 +3312,6 @@ SceneRoots:
   - {fileID: 799509265}
   - {fileID: 404901785}
   - {fileID: 435679516}
-  - {fileID: 1299596154}
+  - {fileID: 7699812359931265777}
+  - {fileID: 1024232168}
+  - {fileID: 1145501196}
