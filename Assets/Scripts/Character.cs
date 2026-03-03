@@ -57,7 +57,7 @@ public class Character : MonoBehaviour
     {
         isActive = false;
         StopAllCoroutines();
-        characterAnimator.Play(characterData.runAnimationName, 0, 0F);
+        characterAnimator.Play(characterData.loseAnimationName, 0, 0f);
     }
  
     public void Jump() 
