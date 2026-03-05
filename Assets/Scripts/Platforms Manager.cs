@@ -60,6 +60,7 @@ public class PlatformsManager : MonoBehaviour
             newPlatform.transform.SetParent(transform);
             newPlatform.transform.localPosition = spawnPosition + newPlatform.GetComponent<Collider>().bounds.size.z * Vector3.forward * 0.5F;
             lastPlatform = newPlatform;
+            onPlatformPassed?.Invoke(newPlatform.GetComponent<Platform>());
         }
     }
     private void Update()
