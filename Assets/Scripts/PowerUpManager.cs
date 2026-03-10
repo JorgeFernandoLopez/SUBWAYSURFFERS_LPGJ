@@ -39,3 +39,5 @@ public class PowerUpManager : MonoBehaviour
         powerUp.transform.localPosition += Vector3.up * powerUpOffset;
     }
 }
+ 
+ 

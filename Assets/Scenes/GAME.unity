@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 87885862}
   - component: {fileID: 87885861}
   - component: {fileID: 87885863}
-  - component: {fileID: 87885864}
+  - component: {fileID: 87885866}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -245,7 +245,28 @@ MonoBehaviour:
       m_Calls: []
   normalCollider: {fileID: 87885862}
   rollCollider: {fileID: 87885865}
---- !u!114 &87885864
+--- !u!135 &87885865
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87885859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.46, z: 0}
+--- !u!114 &87885866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,27 +283,45 @@ MonoBehaviour:
   jumpPowerUpTag: JumpPowerUp
   onMagnetCollected:
     m_PersistentCalls:
+      m_Calls: []
+  onJumpPowerUPCollected:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 532664662}
+        m_TargetAssemblyTypeName: JumpPowerUp, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 722929209}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+  onCoinCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InstantiatePoolObjects, Assembly-CSharp
+        m_MethodName: InstantiateObject
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 404901784}
+        m_TargetAssemblyTypeName: CoinsManager, Assembly-CSharp
+        m_MethodName: AddCoins
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -314,7 +353,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 824746176}
+      - m_Target: {fileID: 1318831350}
         m_TargetAssemblyTypeName: InstantiatePoolObjects, Assembly-CSharp
         m_MethodName: InstantiateObject
         m_Mode: 2
@@ -335,72 +374,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Penguin_song
           m_BoolArgument: 0
         m_CallState: 2
-  onJumpPowerUpCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: JumpPowerUp, Assembly-CSharp
-        m_MethodName: Activate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onCoinCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 404901784}
-        m_TargetAssemblyTypeName: CoinsManager, Assembly-CSharp
-        m_MethodName: AddCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 799509264}
-        m_TargetAssemblyTypeName: InstantiatePoolObjects, Assembly-CSharp
-        m_MethodName: InstantiateObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 87885860}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!135 &87885865
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87885859}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.46, z: 0}
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +777,7 @@ MonoBehaviour:
   duration: 5
   boots:
   - {fileID: 2754830278595308711, guid: 417e862e64d51c749a42a56f99717923, type: 3}
-  character: {fileID: 0}
+  character: {fileID: 87885863}
 --- !u!114 &532664663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,7 +1242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799509265}
-  - component: {fileID: 799509264}
+  - component: {fileID: 799509266}
   m_Layer: 0
   m_Name: InstantiateCoinParticle
   m_TagString: Untagged
@@ -1274,19 +1250,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &799509264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799509263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541094fa459425e4d94d9a047f39b8c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
-  prefab: {fileID: 7153175734518472062, guid: a4c35b0792d2dd547ab3846984c34ff0, type: 3}
 --- !u!4 &799509265
 Transform:
   m_ObjectHideFlags: 0
@@ -1302,6 +1265,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799509266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799509263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541094fa459425e4d94d9a047f39b8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 2119281472371662020, guid: 1e9a6478677eec44db46ba7d97c6b79e, type: 3}
 --- !u!1 &824746175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,7 +1822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024232168}
-  - component: {fileID: 1024232167}
+  - component: {fileID: 1024232169}
   m_Layer: 0
   m_Name: PowerUpManager
   m_TagString: Untagged
@@ -1854,24 +1830,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1024232167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024232166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf1c5198eb165484da95a812a1892cc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
-  minPLatformsNumber: 5
-  maxPlatformsNUmber: 7
-  powerUpPools:
-  - {fileID: 1145501195}
-  - {fileID: 722929211}
-  powerUpOffset: 0.5
 --- !u!4 &1024232168
 Transform:
   m_ObjectHideFlags: 0
@@ -1887,6 +1845,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1024232169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024232166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1c5198eb165484da95a812a1892cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
+  minPLatformsNumber: 5
+  maxPlatformsNUmber: 7
+  powerUpPools:
+  - {fileID: 1145501195}
+  powerUpOffset: 2
 --- !u!1 &1076851458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,7 +1981,7 @@ MonoBehaviour:
           m_StringArgument: Penguin_song
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 532664662}
         m_TargetAssemblyTypeName: JumpPowerUp, Assembly-CSharp
         m_MethodName: Deactivate
         m_Mode: 1
@@ -2228,6 +2203,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.14335, y: 0, z: -2.62595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1318831349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318831351}
+  - component: {fileID: 1318831350}
+  m_Layer: 0
+  m_Name: InstantiateHitParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1318831350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318831349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541094fa459425e4d94d9a047f39b8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+--- !u!4 &1318831351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318831349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.581, y: 0, z: -5.0487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3173,7 +3193,7 @@ MonoBehaviour:
   onPlatformPassed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1024232167}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PowerUpManager, Assembly-CSharp
         m_MethodName: PlatformPassed
         m_Mode: 0
@@ -3274,3 +3294,4 @@ SceneRoots:
   - {fileID: 722929210}
   - {fileID: 939456947}
   - {fileID: 532664664}
+  - {fileID: 1318831351}
